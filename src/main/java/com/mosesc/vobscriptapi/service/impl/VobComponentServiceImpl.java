@@ -45,7 +45,7 @@ public class VobComponentServiceImpl implements VobComponentService {
     @Override
     public void saveComponent(InputComponentBo component) {
         if (StringUtils.isEmpty(component.getName()) || StringUtils.isEmpty(component.getContent())){
-            throw new ValidateFailedException("组件名和组件");
+            throw new ValidateFailedException("组件名和组件不能为空");
         }
         VobComponent vobComponent = new VobComponent();
         BeanUtils.copyProperties(component, vobComponent);
